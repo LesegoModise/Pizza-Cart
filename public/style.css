@@ -1,0 +1,213 @@
+body {
+    background-color: #9F9AA4;
+    /* background-image: url(./background.jpg); */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+.heading {
+    font-size: xx-large;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-align: center;
+    /* background-color: #9F9AA4;
+    width: 10em;
+    margin-left: 15.8em; */
+}
+
+.subheading {
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.pizza {
+    border: 3px solid #ffffff;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 0.5em;
+}
+
+.cart {
+    background-color: #E7CFCD;
+    font-size: medium;
+}
+
+.pizza-checkout {
+    background-color: white;
+}
+
+.class, .checkout, .pay {
+    text-align: center;
+}
+
+.cost {
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+}
+
+button {
+    background-color: grey;
+    border: 1px solid #ffffff;
+    border-radius: 3em;
+    cursor: pointer;
+}
+
+.small-pizza {
+    background-color: #CFD8D7;
+    font-size: medium;
+    /* flex: 1.3; */
+}
+
+.medium-pizza {
+    background-color: #B5C9C3;
+    font-size: medium;
+    /* flex: 1.6; */
+}
+
+.large-pizza {
+    background-color: #CAB1BD;
+    font-size: medium;
+    /* flex: 1.9; */
+}
+
+.contact-us {
+    background-color: #E7CFCD;
+    font-size: medium;
+    padding-bottom: 8em; 
+}
+
+/* .main {
+    display: flex;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+} */
+
+.font {
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 2em;
+}
+
+/* .font1 {
+    font-style: italic;
+    font-size: medium;
+} */
+
+.font2, .font3, .font4 {
+    font-style: italic;
+    font-size: small;
+}
+
+.total {
+    font-size: medium;
+    font-weight: bold;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+image {
+    display:flex;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.special {
+    background-color: beige;
+    color: #000000;
+}
+
+.item {
+    font-size:large;
+    font-weight: bold;
+    font-style: normal;
+}
+
+@media screen and (max-width: 600px) {
+    .font1 {
+        font-size: large;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .contact, .address {
+        margin: 5px;
+    }
+
+    .contact-us {
+        padding-bottom: 1em;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    body {
+        /* background-color: #9F9AA4; */
+        font-size: 14px;
+    }
+
+    .delicious-pizza {
+        display: flex;
+    }
+
+    .small-pizza {
+        width: 25em;
+    }
+
+    .sml-pizza {
+        height: 6em;
+        padding-top: 1em;
+    }
+
+    .medium-pizza {
+        width: 25em;
+    }
+
+    .med-pizza {
+        width: 9em;
+        padding-top: 1em;
+    }
+
+    .large-pizza {
+        width: 25em;
+    }
+
+    .lrg-pizza {
+        width: 9em;
+        height: 6em;
+        padding-top: 1em;
+    }
+
+    .font2 {
+        padding-top: 4.5em;
+    }
+
+    .font4 {
+        padding-top: 2.3em;
+    }
+
+    .contact {
+        float: inline-start;
+    }
+
+    .address {
+        float: inline-end;
+        padding-left: 8em;
+    } 
+
+    .cart {
+        width: 20em;
+        margin-left: 30.5em;
+    }
+
+}

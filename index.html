@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Pizza</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <div x-data="pizzaCart">
+
+        <div class="heading">Perfect Pizza</div>
+
+        <div class="pizza cart">
+
+            <div class="subheading">Pizza Cart</div>
+
+            <div class="class">
+                <div>
+                    Small Pizzas:
+                    <button @click="increment('small')">+</button>
+                    <span x-text="smallCount"></span>
+                    <button @click="decrement('small')">-</button>
+                </div>
+                <div>
+                    Medium Pizzas:
+                    <button @click="increment('medium')">+</button>
+                    <span x-text="mediumCount"></span>
+                    <button @click="decrement('medium')">-</button>
+                </div>
+                <div>
+                    Large Pizzas:
+                    <button @click="increment('large')">+</button>
+                    <span x-text="largeCount"></span>
+                    <button @click="decrement('large')">-</button>
+                </div>
+                <div class="cost">Total Cost: R <span x-text="totalCost.toFixed(2)"></span></div>
+
+                <div class="pay">
+                <button x-show="totalCost > 0" @click="checkout()">Checkout</button>
+                </div> 
+                   
+            </div>    
+
+            <div class="pizza-checkout" x-show="showCheckout" @click.away="showCheckout = false">
+                <div class="checkout">
+                    <div class="subheading">Checkout</div>
+                    <p class="cost">Total Cost: R <span x-text="totalCost.toFixed(2)"></span></p>
+                    <input type="number" placeholder="Enter Payment Amount" x-model="paymentAmount">
+                    <button @click="processPayment()">Pay</button>
+                    <div x-show="paymentMessage" x-text="paymentMessage"></div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="delicious-pizza">
+
+            <div class="pizza small-pizza">
+                <div class="subheading">Small Pizza</div>
+                <img src="./public/Pizza 1.jpg" width="100" class="sml-pizza">
+                <div class="font">
+                    <div class="total">R40.90 <image src="./public/Pizza Icon.png" width="25"></div>
+                    <div class="font1">
+                        <div class="item">Tangy Russian:</div>
+                        <ul>
+                          <li>Chutney Base</li>
+                          <li>Russians</li>
+                          <li>Caramelised Onions</li>  
+                        </ul>
+                    </div>
+                    <div class="font2">You can add, <span class="special">extra cheese</span>, at an affordable price.</div>
+                        <button @click="addToCart('small', 40.90)">Order</button>
+                </div>
+            </div>
+
+            <div class="pizza medium-pizza">
+                <div class="subheading">Medium Pizza</div>
+                <img src="./public/Pizza 2.jpeg" width="220" class="med-pizza">
+                <div class="font">
+                    <div class="total">R75.90 <image src="./public/Pizza Icon.png" width="30"></div>
+                    <div class="font1">
+                        <div class="item">Seafood:</div>
+                        <ul>
+                            <li>Tomato Base</li>
+                            <li>Mussels</li>
+                            <li>Shrimp</li>
+                            <li>Calamari</li>
+                            <li>Garlic</li>
+                            <li>Herbs & Olive Oil</li>  
+                        </ul>
+                    </div>
+                    <div class="font3">You can add, <span class="special">extra cheese</span>, at an affordable price.</div>
+                    <button @click="addToCart('medium', 75.90)">Order</button>
+                </div>
+            </div>
+
+            <div class="pizza large-pizza">
+                <div class="subheading">Large Pizza</div>
+                <img src="./public/Pizza 3.jpeg" width="258" class="lrg-pizza">
+                <div class="font">
+                    <div class="total">R106.90 <image src="./public/Pizza Icon.png" width="35"></div>
+                    <div class="font1">
+                        <div class="item">Sweet Chilli Chicken:</div>
+                        <ul>
+                            <li>Sweet Chilli Base</li>
+                            <li>Chicken</li>
+                            <li>Yellow/Red Piquante Peppers</li>
+                            <li>Feta Cheese</li>  
+                        </ul>
+                    </div>
+                    <div class="font4">You can add, <span class="special">extra cheese</span>, at an affordable price.</div>
+                    <button @click="addToCart('large', 106.90)">Order</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pizza contact-us">
+            <div class="subheading">Contact Details</div>
+            <div class="footer">
+                <div class="font contact">
+                    <div class="item">Contact Us:</div>
+                    +27 (0) 12 840 1092 <br>
+                    info@perfectpizza.co.za <br>
+                    /Facebook /Twitter /Instagram
+                </div>
+
+                <div class="font address">
+                    <div class="item">Address:</div>
+                    578 King Road <br>
+                    Rivonia Drive <br>
+                    Gauteng
+                </div>
+            </div>
+
+        </div>
+
+        <script src="./index.js"></script>
+
+    </div>
+    
+</body>
+</html>
