@@ -85,12 +85,17 @@ document.addEventListener('alpine:init', () => {
 
         processPayment() {
             if (this.paymentAmount >= this.totalCost) {
-                this.paymentMessage = "Enjoy Your Pizzas!";
+                this.change = this.paymentAmount - this.totalCost;
+                if (this.change > 0) {
+                    this.paymentMessage = "Enjoy Your Pizzas! Your Change is R" + this.change.toFixed(2);
+                } else {
+                    this.paymentMessage = "Enjoy Your Pizzas!";
+                }
                 this.resetCart();
             } else {
-                this.paymentMessage = "Sorry - There Is Not Enough Money!";
+                this.paymentMessage = "You Have Insufficient Funds";
             }
-            setTimeout(() => this.paymentMessage = '', 3000);
+            setTimeout(() => this.paymentMessage = '', 5000);
         },
 
         resetCart() {
